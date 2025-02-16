@@ -1,94 +1,72 @@
-Valentine's Invitation App
+# 💖 Valentine's Invitation App
 
-A simple Valentine's invitation desktop app built with Electron.js. The app includes interactive buttons, animations, custom fonts, and a playful experience where the "No" button moves when hovered.
+This is a simple desktop application built with Electron.js to create an interactive Valentine's invitation. The app features animated hearts, a bouncing cat, and playful Yes/No buttons.
 
-Features
+## 🚀 Features
+- Animated hearts floating on Yes button hover
+- "No" button moves away when hovered
+- Custom fonts and styles
+- GIF and sound play when "Yes" is clicked
+- Custom application icon
+- Packaged for distribution
 
-Custom UI: Beautifully designed interface with custom fonts and images.
+## 📂 Project Structure
+```
+📦 valentine-invitation-app
+ ┣ 📂 assets
+ ┃ ┣ 📂 fonts
+ ┃ ┣ 📂 images
+ ┃ ┣ 📂 icons
+ ┣ 📂 src
+ ┃ ┣ 📜 main.js
+ ┃ ┣ 📜 preload.js
+ ┃ ┣ 📜 renderer.js
+ ┣ 📂 renderer
+ ┃ ┣ 📜 index.html
+ ┃ ┣ 📜 index.css
+ ┣ 📜 package.json
+ ┣ 📜 vite.config.js
+ ┣ 📜 README.md
+```
 
-Playful Interaction: The "No" button moves when hovered, making it fun and engaging.
+## 🛠 Installation & Setup
 
-Animated Effects: Hearts floating, bouncing elements, and smooth transitions.
+### Prerequisites
+Make sure you have **Node.js** and **npm** installed.
 
-Custom Sounds & GIFs: The "Yes" button triggers a cute GIF and a sound effect.
-
-Electron Packaging: Can be packaged into an executable for distribution.
-
-Installation
-
-Prerequisites
-
-Node.js (Ensure it's installed)
-
-Electron.js
-
-Steps
-
-Clone this repository:
-
-git clone https://github.com/yourusername/valentine-invitation.git
-cd valentine-invitation
-
-Install dependencies:
-
+### Install Dependencies
+```sh
 npm install
+```
 
-Run the app:
-
+### Run the App
+```sh
 npm start
+```
 
-Packaging the App
+## 🏗 Packaging the App
+To package the Electron app for distribution:
 
-To distribute your app as an executable:
-a
-Install Electron Packager:
+```sh
+npm run make
+```
 
-npm install -g electron-packager
+This will generate platform-specific binaries inside the `out` folder.
 
-Run the packaging command:
-
-electron-packager . "ValentineInvite" --platform=win32 --arch=x64 --icon=assets/icon/icon.ico --out=dist --overwrite
-
-Replace win32 with darwin for macOS or linux for Linux.
-
-Ensure icon.ico exists in the correct path.
-
-The packaged app will be inside the dist/ folder.
-
-Changing the App Icon
-
-To change the desktop, toolbar, and menu bar icons:
-
-Update the main.js file:
-
+## 🖼 Changing the App Icon
+Icons are stored inside `assets/icons/`. Modify the icon path in `main.js`:
+```js
 const appIcon = nativeImage.createFromPath(path.join(__dirname, 'assets/icons/icon.png'));
 mainWindow.setIcon(appIcon);
+```
 
-Ensure the icon file is in assets/icons/icon.png.
+## 🐞 Troubleshooting
+- **App closes immediately on `npm start`**
+  - Ensure your `main.js` has correct file paths.
+  - Check the console for errors.
+  - Run `electron .` directly.
 
-For Windows installers, use an .ico file instead.
+## 📜 License
+This project is open-source and free to use for personal projects.
 
-File Structure
-
-valentine-invitation/
-│── assets/
-│   ├── fonts/
-│   ├── images/
-│   ├── icons/
-│── src/
-│   ├── main.js
-│   ├── preload.js
-│   ├── index.html
-│   ├── renderer.js
-│── package.json
-│── README.md
-
-Credits
-
-UI/Design: [Your Name]
-
-Built with: Electron.js
-
-License
-
-# Valentines_app
+💘 Happy coding! 🎉
